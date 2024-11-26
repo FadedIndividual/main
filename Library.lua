@@ -97,6 +97,27 @@ function Add:Extra(Obj, v)
 		end
 		
 		if not table.find(ifSO, "smod") then TANG.ApplyStrokeMode = Enum.ApplyStrokeMode.Border end
+	elseif String_Table(v[1], {"uill", "lis", "lay"}) then
+		TANG = Instance.new("UIListLayout", Obj)
+
+		for ii, vv in pairs(v[2]) do
+			if String_Table(i, {"layoutd", "fill", "sortdir", "dir"}) then
+				TANG.FillDirection = vv
+				table.insert(ifSO, "fill")
+			elseif String_Table(i, {"sorto", "layouto"}) then
+				TANG.SortOrder = vv
+				table.insert(ifSO, "sort")
+			elseif String_Table(i, {"pad", "off", "scale"}) then
+				TANG.Padding = vv
+			elseif String_Table(i, {"hor", "alignmenth", "alignh", "hal"}) then
+				TANG.HorizontalAlignment = vv
+			elseif String_Table(i, {"ver", "alignmentv", "alignv", "val"}) then
+				TANG.VerticalAlignment = vv
+			end
+		end
+
+		if not table.find(ifSO, "sort") then TANG.SortOrder = Enum.SortOrder.LayoutOrder end
+		if not table.find(ifSO, "fill") then TANG.FillDirection = Enum.FillDirection.Horizontal end
 	end
 	
 	return TANG
@@ -245,7 +266,7 @@ Add.Button = function(Pp, Size, Position, Text, extra)
 	return button
 end
 
-Add.Text = function(Pp, Size, Position, extra)
+Add.Text = function(Pp, Size, Position, Text, extra)
 	local tlabel, ifSO = Instance.new("TextLabel", Pp), {}
 
 	for i, v in pairs(extra) do
@@ -279,9 +300,6 @@ Add.Text = function(Pp, Size, Position, extra)
 		elseif String_Table(i, {"font", "text_f", "txt_f", "textf", "txtf"}) then
 			tlabel.Font = v
 			table.insert(ifSO, "font")
-		elseif string.lower(i) == "text" then
-			tlabel.Text = v
-			table.insert(ifSO, "text")
 		elseif String_Table(i, {"textsc", "scaledt", "textau", "autote", "tas"}) then
 			tlabel.TextScaled = v
 		elseif String_Table(i, {"texts", "sizet", "tsi"}) then
@@ -308,7 +326,7 @@ Add.Text = function(Pp, Size, Position, extra)
 	if not table.find(ifSO, "draggable") then tlabel.Draggable = false end
 	if not table.find(ifSO, "txtclr") then tlabel.TextColor3 = Color_Table.Text end
 	if not table.find(ifSO, "font") then tlabel.Font = Enum.Font.ArimoBold end
-	if not table.find(ifSO, "text") then tlabel.Text = "" end
+	tlabel.Text = Text
 	if not table.find(ifSO, "borderm") then tlabel.BorderMode = Enum.BorderMode.Inset end
 
 	tlabel.Size = Size
@@ -317,7 +335,7 @@ Add.Text = function(Pp, Size, Position, extra)
 	return tlabel
 end
 
-Add.Box = function(Pp, Size, Position, extra)
+Add.Box = function(Pp, Size, Position, Text, extra)
 	local tbox, ifSO = Instance.new("TextBox", Pp), {}
 
 	for i, v in pairs(extra) do
@@ -351,9 +369,6 @@ Add.Box = function(Pp, Size, Position, extra)
 		elseif String_Table(i, {"font", "text_f", "txt_f", "textf", "txtf"}) then
 			tbox.Font = v
 			table.insert(ifSO, "font")
-		elseif string.lower(i) == "text" then
-			tbox.Text = v
-			table.insert(ifSO, "text")
 		elseif String_Table(i, {"textsc", "scaledt", "textau", "autote", "tas"}) then
 			tbox.TextScaled = v
 		elseif String_Table(i, {"texts", "sizet", "tsi"}) then
@@ -386,7 +401,7 @@ Add.Box = function(Pp, Size, Position, extra)
 	if not table.find(ifSO, "draggable") then tbox.Draggable = false end
 	if not table.find(ifSO, "txtclr") then tbox.TextColor3 = Color_Table.Text end
 	if not table.find(ifSO, "font") then tbox.Font = Enum.Font.ArimoBold end
-	if not table.find(ifSO, "text") then tbox.Text = "" end
+	tbox.Text = Text
 	if not table.find(ifSO, "plcholder") then tbox.PlaceholderText = "" end
 	if not table.find(ifSO, "borderm") then tbox.BorderMode = Enum.BorderMode.Inset end
 	if not table.find(ifSO, "clear") then tbox.ClearTextOnFocus = false end
@@ -461,31 +476,6 @@ Add.Scroll = function(Pp, Size, Position, extra)
 	scrlf.Position = Position
 
 	return scrlf
-end
-
-Add.Layout = function(Pp, extra)
-	local uill, ifSO = Instance.new("UIListLayout", Pp), {}
-
-	for i, v in pairs(extra) do
-		if String_Table(i, {"layoutd", "fill", "sortdir", "dir"}) then
-			uill.FillDirection = v
-			table.insert(ifSO, "fill")
-		elseif String_Table(i, {"sorto", "layouto"}) then
-			uill.SortOrder = v
-			table.insert(ifSO, "sort")
-		elseif String_Table(i, {"pad", "off", "scale"}) then
-			uill.Padding = v
-		elseif String_Table(i, {"hor", "alignmenth", "alignh", "hal"}) then
-			uill.HorizontalAlignment = v
-		elseif String_Table(i, {"ver", "alignmentv", "alignv", "val"}) then
-			uill.VerticalAlignment = v
-		end
-	end
-
-	if not table.find(ifSO, "sort") then uill.SortOrder = Enum.SortOrder.LayoutOrder end
-	if not table.find(ifSO, "fill") then uill.FillDirection = Enum.FillDirection.Horizontal end
-
-	return uill
 end
 
 return Add
