@@ -54,6 +54,8 @@ function Add:Extra(Obj, v)
 				table.insert(ifSO, "corner")
 			elseif String_Table(ii, {"en", "vis", "on"}) then
 				TANG.Enabled = vv
+			elseif String_Table(ii, {"name"}) then
+				TANG.Name = vv
 			end
 		end
 		
@@ -74,6 +76,8 @@ function Add:Extra(Obj, v)
 				TANG.Transparency = vv
 			elseif String_Table(ii, {"en", "vis", "on"}) then
 				TANG.Enabled = vv
+			elseif String_Table(ii, {"name"}) then
+				TANG.Name = vv
 			end
 		end
 	elseif String_Table(v[1], {"uis", "str"}) then
@@ -93,6 +97,8 @@ function Add:Extra(Obj, v)
 				TANG.Transparency = vv
 			elseif String_Table(ii, {"en", "vis", "on"}) then
 				TANG.Enabled = vv
+			elseif String_Table(ii, {"name"}) then
+				TANG.Name = vv
 			end
 		end
 		
@@ -113,6 +119,8 @@ function Add:Extra(Obj, v)
 				TANG.HorizontalAlignment = vv
 			elseif String_Table(i, {"ver", "alignmentv", "alignv", "val"}) then
 				TANG.VerticalAlignment = vv
+			elseif String_Table(ii, {"name"}) then
+				TANG.Name = vv
 			end
 		end
 
@@ -159,6 +167,8 @@ Add.Frame = function(Pp, Size, Position, extra)
 			frame.ZIndex = v
 		elseif String_Table(i, {"vis", "isvis"}) then
 			frame.Visible = v
+		elseif String_Table(i, {"name"}) then
+			frame.Name = v
 		end
 	end
 
@@ -247,6 +257,8 @@ Add.Button = function(Pp, Size, Position, Text, extra)
 			button.MouseButton2Up:Connect(function()
 				v(button)
 			end)
+		elseif String_Table(i, {"name"}) then
+			button.Name = v
 		end
 	end
 
@@ -316,6 +328,8 @@ Add.Text = function(Pp, Size, Position, Text, extra)
 			tlabel.MouseLeave:Connect(function()
 				v(tlabel)
 			end)
+		elseif String_Table(i, {"name"}) then
+			tlabel.Name = v
 		end
 	end
 
@@ -391,6 +405,8 @@ Add.Box = function(Pp, Size, Position, Text, extra)
 		elseif String_Table(i, {"clear", "textclear", "delete"}) then
 			tbox.ClearTextOnFocus = v
 			table.insert(ifSO, "clear")
+		elseif String_Table(i, {"name"}) then
+			tbox.Name = v
 		end
 	end
 
@@ -460,6 +476,8 @@ Add.Scroll = function(Pp, Size, Position, extra)
 		elseif String_Table(i, {"dir", "scrolld", "scrollingd"}) then
 			scrlf.ScrollingDirection = v
 			table.insert(ifSO, "direct")
+		elseif String_Table(i, {"name"}) then
+			scrlf.Name = v
 		end
 	end
 
