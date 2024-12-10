@@ -3,6 +3,7 @@ local Add = loadstring(game:HttpGet("https://raw.githubusercontent.com/FadedIndi
 local Parent = Instance.new("ScreenGui")
 Parent.Parent = game:GetService("CoreGui")
 
+-- PRESS Q TO OPEN UI --
 Add:Keybind(Enum.KeyCode.Q, function(bool)
 	Parent.Enabled = not bool
 end, true)
