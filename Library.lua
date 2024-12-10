@@ -169,6 +169,8 @@ Add.Frame = function(Pp, Size, Position, extra)
 			frame.Visible = v
 		elseif String_Table(i, {"name"}) then
 			frame.Name = v
+		elseif String_Table(i, {"lord", "layord", "layouto", "orderlay"}) then
+			frame.LayoutOrder = v
 		end
 	end
 
@@ -259,6 +261,8 @@ Add.Button = function(Pp, Size, Position, Text, extra)
 			end)
 		elseif String_Table(i, {"name"}) then
 			button.Name = v
+		elseif String_Table(i, {"lord", "layord", "layouto", "orderlay"}) then
+			button.LayoutOrder = v
 		end
 	end
 
@@ -330,6 +334,8 @@ Add.Text = function(Pp, Size, Position, Text, extra)
 			end)
 		elseif String_Table(i, {"name"}) then
 			tlabel.Name = v
+		elseif String_Table(i, {"lord", "layord", "layouto", "orderlay"}) then
+			tlabel.LayoutOrder = v
 		end
 	end
 
@@ -407,6 +413,8 @@ Add.Box = function(Pp, Size, Position, Text, extra)
 			table.insert(ifSO, "clear")
 		elseif String_Table(i, {"name"}) then
 			tbox.Name = v
+		elseif String_Table(i, {"lord", "layord", "layouto", "orderlay"}) then
+			tbox.LayoutOrder = v
 		end
 	end
 
@@ -478,6 +486,8 @@ Add.Scroll = function(Pp, Size, Position, extra)
 			table.insert(ifSO, "direct")
 		elseif String_Table(i, {"name"}) then
 			scrlf.Name = v
+		elseif String_Table(i, {"lord", "layord", "layouto", "orderlay"}) then
+			scrlf.LayoutOrder = v
 		end
 	end
 
