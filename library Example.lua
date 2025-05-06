@@ -8,6 +8,7 @@ Add:Keybind(Enum.KeyCode.Q, function(bool)
 	Parent.Enabled = not bool
 end, true)
 
+--Add:Keybind(Enum.KeyCode, function(boolean) end, Toggle)
 --Add.Remove_Binds()
 
 local Add_Frame = Add.Frame(Parent, Size, Position, {["Name"] = "Frame", ["LayoutOrder"] = 1, ["BackgroundTransparency"] = 0, ["BorderSizePixel"] = 0, ["BorderColor3"] = Color3.fromRGB(0, 125, 255), ["BackgroundColor3"] = Color3.fromRGB(0, 125, 255), ["Active"] = true, ["Draggable"] = false, ["MouseEnter"] = function() end, ["MouseLeave"] = function() end, ["BorderMode"] = Enum.BorderMode.Outline, ["ZIndex"] = 1, ["Visible"] = true})
