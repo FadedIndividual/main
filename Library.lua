@@ -479,7 +479,7 @@ Add.Scroll = function(Pp, Size, Position, extra)
 			scrlf.CanvasSize = v
 			table.insert(ifSO, "canvas")
 		elseif String_Table(i, {"auto", "canvasa"}) then
-			scrlf.AutomaticSize = v
+			scrlf.AutomaticCanvasSize = v
 			table.insert(ifSO, "auto")
 		elseif String_Table(i, {"dir", "scrolld", "scrollingd"}) then
 			scrlf.ScrollingDirection = v
@@ -497,11 +497,12 @@ Add.Scroll = function(Pp, Size, Position, extra)
 	if not table.find(ifSO, "active") then scrlf.Active = true end
 	if not table.find(ifSO, "draggable") then scrlf.Draggable = false end
 	if not table.find(ifSO, "canvas") then scrlf.CanvasSize = UDim2.new(0, 0, 1, 0) end
-	if not table.find(ifSO, "auto") then scrlf.AutomaticSize = Enum.AutomaticSize.XY end
+	if not table.find(ifSO, "auto") then scrlf.AutomaticCanvasSize = Enum.AutomaticSize.XY end
 	if not table.find(ifSO, "borderm") then scrlf.BorderMode = Enum.BorderMode.Inset end
 	
 	scrlf.Size = Size
 	scrlf.Position = Position
+	scrlf.AutomaticSize = Enum.AutomaticSize.None
 
 	return scrlf
 end
