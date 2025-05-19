@@ -110,14 +110,14 @@ function Add:Extra(Obj, v)
 			if String_Table(i, {"layoutd", "fill", "sortdir", "dir"}) then
 				TANG.FillDirection = vv
 				table.insert(ifSO, "fill")
-			elseif String_Table(i, {"sorto", "layouto"}) then
+			elseif String_Table(ii, {"sorto", "layouto"}) then
 				TANG.SortOrder = vv
 				table.insert(ifSO, "sort")
-			elseif String_Table(i, {"pad", "off", "scale"}) then
+			elseif String_Table(ii, {"pad", "off", "scale"}) then
 				TANG.Padding = vv
-			elseif String_Table(i, {"hor", "alignmenth", "alignh", "hal"}) then
+			elseif String_Table(ii, {"hor", "alignmenth", "alignh", "hal"}) then
 				TANG.HorizontalAlignment = vv
-			elseif String_Table(i, {"ver", "alignmentv", "alignv", "val"}) then
+			elseif String_Table(ii, {"ver", "alignmentv", "alignv", "val"}) then
 				TANG.VerticalAlignment = vv
 			elseif String_Table(ii, {"name"}) then
 				TANG.Name = vv
