@@ -107,7 +107,7 @@ function Add:Extra(Obj, v)
 		TANG = Instance.new("UIListLayout", Obj)
 
 		for ii, vv in pairs(v[2]) do
-			if String_Table(i, {"layoutd", "fill", "sortdir", "dir"}) then
+			if String_Table(ii, {"layoutd", "fill", "sortdir", "dir"}) then
 				TANG.FillDirection = vv
 				table.insert(ifSO, "fill")
 			elseif String_Table(ii, {"sorto", "layouto"}) then
