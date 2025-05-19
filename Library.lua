@@ -103,7 +103,7 @@ function Add:Extra(Obj, v)
 		end
 		
 		if not table.find(ifSO, "smod") then TANG.ApplyStrokeMode = Enum.ApplyStrokeMode.Border end
-	elseif String_Table(v[1], {"uill", "lis", "lay"}) then
+	elseif String_Table(v[1], {"uilis", "uill", "lis", "lay"}) then
 		TANG = Instance.new("UIListLayout", Obj)
 
 		for ii, vv in pairs(v[2]) do
