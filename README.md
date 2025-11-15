@@ -25,5 +25,10 @@ Murder Mystery 2:
 loadstring(game:HttpGet("https://raw.githubusercontent.com/FadedIndividual/random/refs/heads/main/MM2.lua"))()
 ```
 
+Alt Control:
+```
+loadstring(game:HttpGet("https://raw.githubusercontent.com/FadedIndividual/random/refs/heads/main/Alt_Control.lua"))()
+```
+
 # Lua & Python
 a lil bit of this &amp; a lil bit of that
