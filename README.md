@@ -5,6 +5,11 @@ mortem:
 loadstring(game:HttpGet("https://raw.githubusercontent.com/FadedIndividual/random/refs/heads/main/MORTEM-obfuscated.lua"))()
 ```
 
+miners-haven:
+```
+https://raw.githubusercontent.com/FadedIndividual/random/refs/heads/main/Miners-Haven.lua
+```
+
 phantom-forces:
 ```
 loadstring(game:HttpGet("https://raw.githubusercontent.com/FadedIndividual/random/refs/heads/main/pf.lua"))()
