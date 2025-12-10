@@ -7,7 +7,7 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/FadedIndividual/rando
 
 miners-haven:
 ```
-https://raw.githubusercontent.com/FadedIndividual/random/refs/heads/main/Miners-Haven.lua
+loadstring(game:HttpGet("https://raw.githubusercontent.com/FadedIndividual/random/refs/heads/main/Miners-Haven.lua"))()
 ```
 
 phantom-forces:
